@@ -36,10 +36,10 @@ import sys
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'dj_pagination.tests.settings'
 
-version = "2.0.4"
+version = "2.3.2"
 
 if sys.argv[-1] == 'publish':
-    os.system('python install -U twine wheel')
+    os.system('pip install -U twine wheel')
     os.system('python setup.py sdist bdist_wheel')
     os.system('twine upload dist/*')
     sys.exit()
@@ -65,6 +65,10 @@ setup(
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
+        "Framework :: Django :: 1.8",
+        "Framework :: Django :: 1.9",
+        "Framework :: Django :: 1.10",
+        "Framework :: Django :: 1.11",
         "Environment :: Web Environment",
         "Framework :: Django",
         "Intended Audience :: Developers",
@@ -75,6 +79,7 @@ setup(
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
     ],
     extras_require={
         ':python_version < "3.0"': ['Django>=1.8,<2.0'],
