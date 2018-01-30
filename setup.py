@@ -76,8 +76,9 @@ setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
     ],
-    setup_requires=[
-        'django >= 1.8.0'
-    ],
+    extras_require={
+        ':python_version < "3.0"': ['Django>=1.8,<2.0'],
+        ':python_version >= "3.0"': ['Django>=1.8'],
+    },
     include_package_data=True,
 )
